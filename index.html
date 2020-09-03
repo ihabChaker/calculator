@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Document</title>
+</head>
+
+<body>
+     <table>
+          <tr>
+               <td><input type="text" id="sc" value="" placeholder="0"></td>
+          </tr>
+          <tr>
+          
+               <td><button onclick="del()">delete</button></td>
+               <td><button onclick="reset()">reset</button></td>
+          </tr>
+          <tr>
+               <td><button onclick="addText(1)">1</button></td>
+               <td><button onclick="addText(2)">2</button></td>
+               <td><button onclick="addText(3)">3</button></td>
+          </tr>
+          <tr>
+               <td><button onclick="addText(4)">4</button></td>
+               <td><button onclick="addText(5)">5</button></td>
+               <td><button onclick="addText(6)">6</button></td>
+          </tr>
+          <tr>
+               <td><button onclick="addText(7)">7</button></td>
+               <td><button onclick="addText(8)">8</button></td>
+               <td><button onclick="addText(9)">9</button></td>
+          </tr>
+          <tr>
+               <td><button onclick="addText(0)">0</button></td>
+               <td><button onclick="addText('.')">.</button></td>
+               <td><button onclick="equal()">=</button></td>
+          </tr>
+
+          <tr>
+               <td><button onclick='sum()'>+</button></td>
+               <td><button onclick='sub()'>-</button></td>
+               <td><button onclick='div()'>/</button></td>
+               <td><button onclick='mult()'>*</button></td>
+          </tr>
+          
+     </table>
+     <script>
+          const sc = document.getElementById('sc')
+          let prev = 0
+          function addText(x) {
+
+               sc.value = sc.value + x.toString()
+          }
+          function sum() {
+
+               sc.value = sc.value + '+'
+          }
+          function div() {
+
+               sc.value = sc.value + '/'
+          }
+          function mult() {
+
+               sc.value = sc.value + '*'
+          }
+          function sub() {
+
+               sc.value = sc.value + '-'
+          }
+          function equal() {
+
+               sc.placeholder = eval(sc.value).toString()
+               sc.value = eval(sc.value).toString()
+
+          }
+          function del() {
+               sc.value = sc.value.substr(0, sc.value.length - 1)
+          }
+          function reset() {
+               sc.placeholder = "0"
+               sc.value = ""
+          }
+
+     </script>
+</body>
+
+</html>
